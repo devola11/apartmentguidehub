@@ -1,8 +1,8 @@
-# ApmtGuide
+# ApartmentGuideNext
 
 A full-stack apartment listing platform for renters and landlords across **New York** and **New Jersey**. Browse 60+ verified listings, filter by city/price/bedrooms, save favorites, and contact property managers directly.
 
-**Live:** [https://apmtguide.com](https://apmtguide.com)
+**Live:** [https://apartmentguidenext.com](https://apartmentguidenext.com)
 
 ---
 

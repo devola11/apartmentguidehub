@@ -3,7 +3,7 @@
 // Uses react-helmet-async so tags are injected safely in the document head.
 //
 // Props:
-//   title       - page title (will be appended with " | ApmtGuide")
+//   title       - page title (will be appended with " | ApartmentGuideNext")
 //   description - meta description (max ~155 chars for best results)
 //   canonical   - canonical URL for this page
 //   image       - OG image URL (optional, falls back to default hero)
@@ -14,8 +14,8 @@
 
 import { Helmet } from "react-helmet-async";
 
-const SITE_NAME = "ApmtGuide";
-const SITE_URL = "https://apmtguide.com";
+const SITE_NAME = "ApartmentGuideNext";
+const SITE_URL = "https://apartmentguidenext.com";
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80";
 const DEFAULT_IMAGE_ALT = "Modern apartment building exterior";

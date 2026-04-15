@@ -182,7 +182,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <p className="text-white font-bold text-lg mb-2">
-              Apmt<span className="text-brand-500">Guide</span>
+              ApartmentGuide<span className="text-brand-500">Next</span>
             </p>
             <p className="text-sm leading-relaxed text-gray-400 mb-4">
               Find verified apartment listings across New York and New Jersey. Real homes, real prices.
@@ -269,9 +269,9 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row
                         items-center justify-between gap-2 text-xs text-gray-400">
-          <p>© {new Date().getFullYear()} ApmtGuide. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ApartmentGuideNext. All rights reserved.</p>
           <p>
-            ApmtGuide is powered by{" "}
+            ApartmentGuideNext is powered by{" "}
             <a href={AG_URL} target="_blank" rel="noopener noreferrer"
               className="text-gray-400 hover:text-white underline transition-colors duration-150">
               ApartmentGuide.com

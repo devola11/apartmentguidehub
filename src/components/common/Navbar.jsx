@@ -86,7 +86,7 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="text-xl font-bold text-[#202124] tracking-tight">
-            Apmt<span className="text-brand-600">Guide</span>
+            ApartmentGuide<span className="text-brand-600">Next</span>
           </span>
         </Link>
 

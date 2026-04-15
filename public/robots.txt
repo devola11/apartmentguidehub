@@ -5,4 +5,4 @@ Disallow: /favorites
 Disallow: /login
 Disallow: /register
 
-Sitemap: https://apmtguide.com/sitemap.xml
+Sitemap: https://apartmentguidenext.com/sitemap.xml

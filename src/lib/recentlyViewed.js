@@ -1,7 +1,7 @@
 // src/lib/recentlyViewed.js
 // Manages recently viewed listings in localStorage (last 10).
 
-const KEY = "apmtguide_recently_viewed";
+const KEY = "agn_recently_viewed";
 const MAX = 10;
 
 export function getRecentlyViewed() {

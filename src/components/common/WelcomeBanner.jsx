@@ -77,7 +77,7 @@ export default function WelcomeBanner({ firstName, onDismiss }) {
         <div className="flex items-center gap-3 min-w-0">
           <span className="text-xl shrink-0" aria-hidden="true">👋</span>
           <p className="text-sm font-medium leading-snug">
-            Welcome to ApmtGuide
+            Welcome to ApartmentGuideNext
             {firstName ? `, ${firstName}` : ""}!{" "}
             Start exploring apartments across New York &amp; New Jersey.
           </p>

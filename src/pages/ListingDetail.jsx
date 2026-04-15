@@ -182,7 +182,7 @@ export default function ListingDetail() {
     "@type": "RealEstateListing",
     name: listing.title,
     description: listing.description || seoDescription,
-    url: `https://apmtguide.com/listings/${listing.id}`,
+    url: `https://apartmentguidenext.com/listings/${listing.id}`,
     image: imageUrl,
     address: {
       "@type": "PostalAddress",

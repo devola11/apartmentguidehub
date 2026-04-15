@@ -409,7 +409,7 @@ export default function Listings({ stateFilter }) {
                              0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
-                  apmtguide@gmail.com
+                  info@apartmentguidenext.com
                 </button>
               </div>
 

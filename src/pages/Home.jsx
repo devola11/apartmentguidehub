@@ -57,14 +57,14 @@ const HOW_IT_WORKS = [
 const HOME_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "ApmtGuide",
-  url: "https://apmtguide.com",
+  name: "ApartmentGuideNext",
+  url: "https://apartmentguidenext.com",
   description: "Browse verified apartments for rent across New York and New Jersey.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://apmtguide.com/listings?q={search_term_string}",
+      urlTemplate: "https://apartmentguidenext.com/listings?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -146,9 +146,9 @@ export default function Home() {
         />
       )}
 
-      {/* No title prop — SEO uses the full default: "ApmtGuide - Find Apartments for Rent in New York & New Jersey" */}
+      {/* No title prop — SEO uses the full default: "ApartmentGuideNext - Find Apartments for Rent in New York & New Jersey" */}
       <SEO
-        description="Browse 60+ verified apartments for rent across New York and New Jersey. Filter by city, price, and bedrooms. Find your perfect home with ApmtGuide."
+        description="Browse 60+ verified apartments for rent across New York and New Jersey. Filter by city, price, and bedrooms. Find your perfect home with ApartmentGuideNext."
         canonical="/"
         jsonLd={HOME_JSON_LD}
       />
