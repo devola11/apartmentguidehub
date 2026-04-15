@@ -118,7 +118,7 @@ export default function FilterBar({ onFilter, stateFilter }) {
           <CityAutocomplete
             value={city}
             onChange={handleCity}
-            placeholder="e.g. Miami"
+            placeholder="e.g. Manhattan, Brooklyn, Jersey City"
             wrapperClassName={wCity}
             inputClassName={`${inputCls} w-full min-h-[44px]`}
           />

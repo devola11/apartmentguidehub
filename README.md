@@ -1,6 +1,6 @@
 # ApmtGuide
 
-A full-stack apartment listing platform for renters and landlords across **California** and **Florida**. Browse 50+ verified listings, filter by city/price/bedrooms, save favorites, and contact property managers directly.
+A full-stack apartment listing platform for renters and landlords across **New York** and **New Jersey**. Browse 60+ verified listings, filter by city/price/bedrooms, save favorites, and contact property managers directly.
 
 **Live:** [https://apmtguide.com](https://apmtguide.com)
 
@@ -23,7 +23,7 @@ A full-stack apartment listing platform for renters and landlords across **Calif
 
 ## Features
 
-- Browse and filter 50+ apartment listings (California & Florida)
+- Browse and filter 60+ apartment listings (New York & New Jersey)
 - Interactive Leaflet map with price markers
 - User auth (sign up / log in / sign out) via Supabase
 - Save and manage favorite listings

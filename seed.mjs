@@ -1,7 +1,8 @@
-// seed.mjs — run once with: node seed.mjs
-// Inserts 50 apartment listings into the Supabase `listings` table.
-// 25 California listings across LA, SF, San Diego, Sacramento, San Jose, Oakland.
-// 25 Florida listings across Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale.
+// seed.mjs — DEPRECATED: use seed_listings_nynj.sql instead.
+// This file contains old CA/FL data and is no longer used.
+// The current seed is seed_listings_nynj.sql (60 NY/NJ listings).
+//
+// Original: inserted 50 CA/FL apartment listings via JS.
 
 import { createClient } from "@supabase/supabase-js";
 
