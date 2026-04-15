@@ -64,8 +64,8 @@ export default function App() {
                 {/* Public routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/listings" element={<Listings />} />
-                <Route path="/listings/california" element={<Listings stateFilter="California" />} />
-                <Route path="/listings/florida" element={<Listings stateFilter="Florida" />} />
+                <Route path="/listings/new-york" element={<Listings stateFilter="New York" />} />
+                <Route path="/listings/new-jersey" element={<Listings stateFilter="New Jersey" />} />
                 <Route path="/listings/:id" element={<ListingDetail />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

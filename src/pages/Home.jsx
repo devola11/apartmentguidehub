@@ -12,12 +12,12 @@ import SendMessageModal from "../components/common/SendMessageModal";
 import { RecentlyViewedRow } from "../components/listings/RecentlyViewed";
 
 const CITIES = [
-  { name: "Los Angeles",   state: "California", count: 12, img: "/cities/los-angeles.webp" },
-  { name: "Miami",         state: "Florida",    count: 10, img: "/cities/miami.webp" },
-  { name: "San Francisco", state: "California", count: 8,  img: "/cities/san-francisco.webp" },
-  { name: "Tampa",         state: "Florida",    count: 7,  img: "/cities/tampa.webp" },
-  { name: "San Diego",     state: "California", count: 8,  img: "/cities/san-diego.webp" },
-  { name: "Orlando",       state: "Florida",    count: 6,  img: "/cities/orlando.webp" },
+  { name: "Manhattan",   state: "New York",    count: 14, img: "/cities/manhattan.webp" },
+  { name: "Brooklyn",    state: "New York",    count: 8,  img: "/cities/brooklyn.webp" },
+  { name: "Jersey City", state: "New Jersey",  count: 8,  img: "/cities/jersey-city.webp" },
+  { name: "Hoboken",     state: "New Jersey",  count: 5,  img: "/cities/hoboken.webp" },
+  { name: "Queens",      state: "New York",    count: 5,  img: "/cities/queens.webp" },
+  { name: "Newark",      state: "New Jersey",  count: 5,  img: "/cities/newark.webp" },
 ];
 
 const HOW_IT_WORKS = [
@@ -59,7 +59,7 @@ const HOME_JSON_LD = {
   "@type": "WebSite",
   name: "ApmtGuide",
   url: "https://apmtguide.com",
-  description: "Browse verified apartments for rent across California and Florida.",
+  description: "Browse verified apartments for rent across New York and New Jersey.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -146,9 +146,9 @@ export default function Home() {
         />
       )}
 
-      {/* No title prop — SEO uses the full default: "ApmtGuide - Find Apartments for Rent in California & Florida" */}
+      {/* No title prop — SEO uses the full default: "ApmtGuide - Find Apartments for Rent in New York & New Jersey" */}
       <SEO
-        description="Browse 50+ verified apartments for rent across California and Florida. Filter by city, price, and bedrooms. Find your perfect home with ApmtGuide."
+        description="Browse 60+ verified apartments for rent across New York and New Jersey. Filter by city, price, and bedrooms. Find your perfect home with ApmtGuide."
         canonical="/"
         jsonLd={HOME_JSON_LD}
       />
@@ -226,7 +226,7 @@ export default function Home() {
             50+ Verified Listings
           </span>
           <span className="text-gray-300 hidden sm:block">|</span>
-          <span>California &amp; Florida</span>
+          <span>New York &amp; New Jersey</span>
           <span className="text-gray-300 hidden sm:block">|</span>
           <span>Updated Daily</span>
         </div>

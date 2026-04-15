@@ -17,12 +17,12 @@
 
   <!-- State pages -->
   <url>
-    <loc>https://apmtguide.com/listings/california</loc>
+    <loc>https://apmtguide.com/listings/new-york</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apmtguide.com/listings/florida</loc>
+    <loc>https://apmtguide.com/listings/new-jersey</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>

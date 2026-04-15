@@ -85,7 +85,7 @@ export default function ListingRow({ listing, isActive, onMouseEnter, onMouseLea
           />
           {/* State badge */}
           <span className="absolute top-2 left-2 bg-[#1A73E8] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-            {listing.state === "California" ? "CA" : listing.state === "Florida" ? "FL" : listing.state}
+            {listing.state === "New York" ? "NY" : listing.state === "New Jersey" ? "NJ" : listing.state}
           </span>
           {/* Favorite button - min 44px tap target */}
           <button

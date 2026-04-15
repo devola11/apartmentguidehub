@@ -44,19 +44,19 @@ import FindApartmentModal from "../components/common/FindApartmentModal";
 const ITEMS_PER_PAGE = 10;
 
 const SEO_CONFIG = {
-  California: {
-    title: "Apartments for Rent in California",
-    description: "Find apartments for rent across California - Los Angeles, San Francisco, San Diego, and more.",
-    canonical: "/listings/california",
+  "New York": {
+    title: "Apartments for Rent in New York",
+    description: "Find apartments for rent across New York - Manhattan, Brooklyn, Queens, Bronx, and more.",
+    canonical: "/listings/new-york",
   },
-  Florida: {
-    title: "Apartments for Rent in Florida",
-    description: "Find apartments for rent across Florida - Miami, Orlando, Tampa, and more.",
-    canonical: "/listings/florida",
+  "New Jersey": {
+    title: "Apartments for Rent in New Jersey",
+    description: "Find apartments for rent across New Jersey - Jersey City, Hoboken, Newark, and more.",
+    canonical: "/listings/new-jersey",
   },
   default: {
     title: "All Apartments for Rent",
-    description: "Browse all verified apartment listings across California and Florida.",
+    description: "Browse all verified apartment listings across New York and New Jersey.",
     canonical: "/listings",
   },
 };
@@ -122,7 +122,7 @@ export default function Listings({ stateFilter }) {
   const currentPage   = Math.min(page, totalPages);
 
   const seo           = SEO_CONFIG[stateFilter] || SEO_CONFIG.default;
-  const locationLabel = stateFilter || "California & Florida";
+  const locationLabel = stateFilter || "New York & New Jersey";
   const countLabel    = loading
     ? "Loading…"
     : `${total} Apartment${total !== 1 ? "s" : ""} for Rent in ${locationLabel}`;

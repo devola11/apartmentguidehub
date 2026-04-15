@@ -30,7 +30,7 @@ export default function SEO({
   noindex = false,
   jsonLd,
 }) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Find Apartments for Rent in California & Florida`;
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Find Apartments for Rent in New York & New Jersey`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
 
   return (

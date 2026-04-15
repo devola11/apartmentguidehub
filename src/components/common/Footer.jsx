@@ -185,7 +185,7 @@ export default function Footer() {
               Apmt<span className="text-brand-500">Guide</span>
             </p>
             <p className="text-sm leading-relaxed text-gray-400 mb-4">
-              Find verified apartment listings across California and Florida. Real homes, real prices.
+              Find verified apartment listings across New York and New Jersey. Real homes, real prices.
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3">
@@ -215,13 +215,13 @@ export default function Footer() {
             <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Browse</p>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/listings/california" className="hover:text-white transition-colors duration-150">
-                  California
+                <Link to="/listings/new-york" className="hover:text-white transition-colors duration-150">
+                  New York
                 </Link>
               </li>
               <li>
-                <Link to="/listings/florida" className="hover:text-white transition-colors duration-150">
-                  Florida
+                <Link to="/listings/new-jersey" className="hover:text-white transition-colors duration-150">
+                  New Jersey
                 </Link>
               </li>
               <li>

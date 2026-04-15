@@ -1,139 +1,155 @@
 // src/lib/neighborhoodData.js
 // Realistic neighborhood data keyed by city.
-// Walk scores are higher for dense/downtown cities, lower for suburban areas.
+// Walk scores are higher for dense/downtown areas, lower for suburban areas.
+// NYC areas have very high walk scores (85-98).
 
 const CITY_DATA = {
-  "Los Angeles": {
-    walkScore: 72, walkLabel: "Very Walkable",
-    schools: ["UCLA Lab School", "LAUSD Magnet Academy", "Westside Preparatory"],
-    transit: ["Metro B Line (0.3 mi)", "Rapid 720 Bus (0.1 mi)"],
-    dining: ["Farm-to-Table Cafés", "Korean BBQ", "Taco Trucks"],
+  // ── New York ──────────────────────────────────────────────────────────────
+  "Manhattan": {
+    walkScore: 97, walkLabel: "Walker's Paradise",
+    schools: ["Stuyvesant High School", "PS 6 Lillie D. Blake", "Trinity School"],
+    transit: ["Subway 4/5/6 (0.1 mi)", "Crosstown M86 Bus (0.1 mi)"],
+    dining: ["Upscale Steakhouses", "Pizza by the Slice", "Dim Sum Parlors"],
   },
-  "San Francisco": {
-    walkScore: 89, walkLabel: "Walker's Paradise",
-    schools: ["Lowell High School", "SF Day School", "Chinese Immersion School"],
-    transit: ["BART Station (0.2 mi)", "Muni F Line (0.1 mi)"],
-    dining: ["Dim Sum Houses", "Sourdough Bakeries", "Seafood on the Wharf"],
+  "New York": {
+    walkScore: 97, walkLabel: "Walker's Paradise",
+    schools: ["Stuyvesant High School", "PS 6 Lillie D. Blake", "Trinity School"],
+    transit: ["Subway 4/5/6 (0.1 mi)", "Crosstown M86 Bus (0.1 mi)"],
+    dining: ["Upscale Steakhouses", "Pizza by the Slice", "Dim Sum Parlors"],
   },
-  "San Diego": {
-    walkScore: 68, walkLabel: "Somewhat Walkable",
-    schools: ["San Diego High", "The Bishop's School", "Del Mar Heights Elementary"],
-    transit: ["Trolley Blue Line (0.4 mi)", "MTS Route 7 (0.2 mi)"],
-    dining: ["Fish Taco Spots", "Craft Brewpubs", "Beachside Grills"],
+  "Brooklyn": {
+    walkScore: 91, walkLabel: "Walker's Paradise",
+    schools: ["Brooklyn Tech High", "PS 321 William Penn", "Saint Ann's School"],
+    transit: ["Subway F/G (0.2 mi)", "B41 Bus (0.1 mi)"],
+    dining: ["Farm-to-Table Bistros", "Artisan Pizza", "Caribbean Jerk Spots"],
   },
-  "Sacramento": {
-    walkScore: 65, walkLabel: "Somewhat Walkable",
-    schools: ["C.K. McClatchy High", "Sacramento Waldorf", "Capital Christian Academy"],
-    transit: ["SacRT Blue Line (0.3 mi)", "Yolobus Route 42 (0.2 mi)"],
-    dining: ["Farm-to-Fork Bistros", "Vietnamese Pho", "Midtown Coffee Roasters"],
-  },
-  "Oakland": {
-    walkScore: 78, walkLabel: "Very Walkable",
-    schools: ["Oakland Tech High", "Head-Royce School", "Redwood Day School"],
-    transit: ["BART 12th St Station (0.2 mi)", "AC Transit 51A (0.1 mi)"],
-    dining: ["Ethiopian Restaurants", "BBQ Joints", "Third-Wave Coffee"],
-  },
-  "Fresno": {
-    walkScore: 60, walkLabel: "Somewhat Walkable",
-    schools: ["Fresno High School", "San Joaquin Memorial", "Clovis Unified"],
-    transit: ["FAX Route 9 (0.3 mi)", "BRT Route 1 (0.5 mi)"],
-    dining: ["Mexican Taquerias", "Armenian Bakeries", "Central Valley Grills"],
-  },
-  "Irvine": {
-    walkScore: 62, walkLabel: "Somewhat Walkable",
-    schools: ["University High", "Irvine Montessori", "Turtle Rock Elementary"],
-    transit: ["OCTA Route 79 (0.2 mi)", "Metrolink Irvine Station (1.2 mi)"],
-    dining: ["Asian Fusion", "Mediterranean Grills", "Spectrum Mall Dining"],
-  },
-  "Santa Monica": {
+  "Queens": {
     walkScore: 86, walkLabel: "Very Walkable",
-    schools: ["Santa Monica High", "Crossroads School", "Franklin Elementary"],
-    transit: ["Metro E Line (0.3 mi)", "Big Blue Bus 1 (0.1 mi)"],
-    dining: ["Oceanfront Seafood", "Third Street Promenade Cafés", "Organic Juice Bars"],
+    schools: ["Townsend Harris High", "PS 122 Mamie Fay", "The Scholar's Academy"],
+    transit: ["Subway N/W (0.2 mi)", "Q69 Bus (0.1 mi)"],
+    dining: ["Greek Tavernas", "Colombian Bakeries", "Thai Street Food"],
   },
-  "Long Beach": {
-    walkScore: 70, walkLabel: "Very Walkable",
-    schools: ["Poly High School", "Long Beach Prep", "Lowell Elementary"],
-    transit: ["Metro A Line (0.3 mi)", "LBT Route 1 (0.1 mi)"],
-    dining: ["Cambodian Cuisine", "Waterfront Grills", "Retro Diners"],
+  "Astoria": {
+    walkScore: 90, walkLabel: "Walker's Paradise",
+    schools: ["Frank Sinatra School of the Arts", "PS 122 Mamie Fay", "Long Island City STEAM Academy"],
+    transit: ["Subway N/W (0.2 mi)", "Q69 Bus (0.1 mi)"],
+    dining: ["Greek Tavernas", "Egyptian Bakeries", "Craft Cocktail Bars"],
   },
-  "Pasadena": {
-    walkScore: 73, walkLabel: "Very Walkable",
-    schools: ["John Muir High", "Polytechnic School", "Westridge School"],
-    transit: ["Metro L Line (0.2 mi)", "Pasadena Transit 10 (0.1 mi)"],
-    dining: ["Old Town Bistros", "Craft Cocktail Bars", "Rose Bowl Area Cafés"],
+  "Williamsburg": {
+    walkScore: 93, walkLabel: "Walker's Paradise",
+    schools: ["Brooklyn Latin School", "PS 84 José de Diego", "Williamsburg Prep"],
+    transit: ["Subway L (0.1 mi)", "B62 Bus (0.1 mi)"],
+    dining: ["Smoked Meat Spots", "Rooftop Bars", "Artisan Coffee Roasters"],
   },
-  "Anaheim": {
-    walkScore: 63, walkLabel: "Somewhat Walkable",
-    schools: ["Anaheim High School", "Servite High", "Palm Lane Elementary"],
-    transit: ["OCTA Route 50 (0.2 mi)", "Metrolink Anaheim (0.8 mi)"],
-    dining: ["Packing District Food Hall", "Mexican Restaurants", "Theme Park Dining"],
+  "Long Island City": {
+    walkScore: 89, walkLabel: "Very Walkable",
+    schools: ["Hunters Point Community MS", "PS 1 Alfred E. Smith", "WNYC Studios Academy"],
+    transit: ["Subway 7 (0.2 mi)", "NYC Ferry (0.3 mi)"],
+    dining: ["Waterfront Breweries", "Modern Korean", "Food Halls"],
   },
-  "Beverly Hills": {
+  "Park Slope": {
+    walkScore: 95, walkLabel: "Walker's Paradise",
+    schools: ["MS 51 William Alexander", "PS 321 William Penn", "Berkeley Carroll School"],
+    transit: ["Subway F/G (0.2 mi)", "B67 Bus (0.1 mi)"],
+    dining: ["5th Ave Brunch Spots", "Prospect Park Cafés", "Organic Juice Bars"],
+  },
+  "Bushwick": {
+    walkScore: 88, walkLabel: "Very Walkable",
+    schools: ["Bushwick School for Social Justice", "PS 123 Suydam", "Academy of Urban Planning"],
+    transit: ["Subway M/L (0.2 mi)", "B60 Bus (0.1 mi)"],
+    dining: ["Trendy Taco Spots", "Gallery Cafés", "Craft Breweries"],
+  },
+  "Harlem": {
+    walkScore: 92, walkLabel: "Walker's Paradise",
+    schools: ["Frederick Douglass Academy", "PS 185 John M. Langston", "Thurgood Marshall Academy"],
+    transit: ["Subway A/B/C/D (0.2 mi)", "M7 Bus (0.1 mi)"],
+    dining: ["Soul Food Restaurants", "West African Cuisine", "Jazz Club Lounges"],
+  },
+  "Upper East Side": {
+    walkScore: 96, walkLabel: "Walker's Paradise",
+    schools: ["Dalton School", "PS 6 Lillie D. Blake", "Chapin School"],
+    transit: ["Subway 4/5/6 (0.1 mi)", "M79 Crosstown Bus (0.1 mi)"],
+    dining: ["Madison Ave Cafés", "French Bistros", "Classic Delis"],
+  },
+  "Upper West Side": {
+    walkScore: 96, walkLabel: "Walker's Paradise",
+    schools: ["Trinity School", "PS 87 William Sherman", "Collegiate School"],
+    transit: ["Subway 1/2/3 (0.1 mi)", "M104 Bus (0.1 mi)"],
+    dining: ["Columbus Ave Brunch", "Zabar's Deli", "Lincoln Center Dining"],
+  },
+  "Bronx": {
+    walkScore: 78, walkLabel: "Very Walkable",
+    schools: ["Bronx Science High", "PS 75 School of Research", "Riverdale Country School"],
+    transit: ["Subway 4/5/6 (0.3 mi)", "Bx1 Bus (0.1 mi)"],
+    dining: ["Dominican Restaurants", "Italian Delis on Arthur Ave", "Jamaican Patty Shops"],
+  },
+  "Staten Island": {
+    walkScore: 58, walkLabel: "Somewhat Walkable",
+    schools: ["Tottenville High School", "PS 48 William G. Wilcox", "Staten Island Academy"],
+    transit: ["Staten Island Ferry (0.5 mi)", "SIR Train (0.3 mi)"],
+    dining: ["Waterfront Seafood", "Italian Red-Sauce Joints", "Sri Lankan Cuisine"],
+  },
+
+  // ── New Jersey ────────────────────────────────────────────────────────────
+  "Jersey City": {
+    walkScore: 87, walkLabel: "Very Walkable",
+    schools: ["McNair Academic High", "PS 3 Dr. Ronald McNair", "Stevens Cooperative School"],
+    transit: ["PATH Train (0.2 mi)", "Hudson-Bergen Light Rail (0.3 mi)"],
+    dining: ["India Square Restaurants", "Waterfront Steakhouses", "Filipino Bakeries"],
+  },
+  "Hoboken": {
+    walkScore: 94, walkLabel: "Walker's Paradise",
+    schools: ["Hoboken High School", "All Saints Episcopal Day School", "Stevens Cooperative School"],
+    transit: ["PATH Train (0.2 mi)", "NJ Transit Bus 126 (0.1 mi)"],
+    dining: ["Washington St Restaurants", "Italian Delis", "Craft Beer Bars"],
+  },
+  "Newark": {
     walkScore: 80, walkLabel: "Very Walkable",
-    schools: ["Beverly Hills High", "Good Shepherd School", "Hawthorne Elementary"],
-    transit: ["Metro D Line (0.3 mi)", "Beverly Hills Trolley (0.1 mi)"],
-    dining: ["Rodeo Drive Cafés", "Celebrity Chef Restaurants", "Deli & Bakeries"],
+    schools: ["Science Park High School", "Robert Treat Academy", "Newark Academy"],
+    transit: ["PATH Train (0.3 mi)", "NJ Transit (0.2 mi)"],
+    dining: ["Ironbound Portuguese", "Brazilian Steakhouses", "Spanish Tapas Bars"],
   },
-  "Miami": {
+  "Paterson": {
+    walkScore: 74, walkLabel: "Very Walkable",
+    schools: ["Eastside High School", "Paterson Academy", "PANTHER Academy"],
+    transit: ["NJ Transit Bus 161 (0.2 mi)", "Paterson Station (0.5 mi)"],
+    dining: ["Turkish Kebab Houses", "Arabic Bakeries", "Peruvian Chicken Spots"],
+  },
+  "Elizabeth": {
+    walkScore: 72, walkLabel: "Very Walkable",
+    schools: ["Elizabeth High School", "Thomas Jefferson Arts Academy", "Elmora Hills Elementary"],
+    transit: ["NJ Transit Elizabeth Station (0.3 mi)", "Bus 113 (0.1 mi)"],
+    dining: ["Colombian Restaurants", "Portuguese Bakeries", "Cuban Sandwich Shops"],
+  },
+  "New Brunswick": {
+    walkScore: 82, walkLabel: "Very Walkable",
+    schools: ["New Brunswick High School", "Rutgers Preparatory School", "Christ the King Elementary"],
+    transit: ["NJ Transit Train (0.2 mi)", "Rutgers Bus (0.1 mi)"],
+    dining: ["George St Restaurants", "Pho Houses", "College Town Brewpubs"],
+  },
+  "Trenton": {
+    walkScore: 68, walkLabel: "Somewhat Walkable",
+    schools: ["Trenton Central High", "Foundation Collegiate Academy", "Trenton Catholic Academy"],
+    transit: ["NJ Transit Trenton Station (0.3 mi)", "SEPTA R-Line (0.3 mi)"],
+    dining: ["Italian Red-Sauce Joints", "Dominican Cafés", "State House District Pubs"],
+  },
+  "Princeton": {
+    walkScore: 79, walkLabel: "Very Walkable",
+    schools: ["Princeton High School", "Princeton Day School", "The Lawrenceville School"],
+    transit: ["Princeton Dinky Train (0.3 mi)", "NJ Transit Bus 606 (0.2 mi)"],
+    dining: ["Nassau St Bistros", "Farm-to-Table Restaurants", "Ivy League Coffee Shops"],
+  },
+  "Morristown": {
     walkScore: 76, walkLabel: "Very Walkable",
-    schools: ["Miami Senior High", "Ransom Everglades", "Coral Way K-8"],
-    transit: ["Metrorail Green Line (0.3 mi)", "Metrobus 8 (0.1 mi)"],
-    dining: ["Cuban Cafés", "Ceviche Bars", "Art District Bistros"],
+    schools: ["Morristown High School", "Morristown-Beard School", "Assumption School"],
+    transit: ["NJ Transit Morristown Station (0.2 mi)", "Bus MCM1 (0.1 mi)"],
+    dining: ["The Green Restaurants", "South St Gastropubs", "Artisan Bakeries"],
   },
-  "Orlando": {
-    walkScore: 64, walkLabel: "Somewhat Walkable",
-    schools: ["Boone High School", "Lake Highland Prep", "College Park Middle"],
-    transit: ["SunRail (0.5 mi)", "Lynx Route 21 (0.2 mi)"],
-    dining: ["Mills 50 Vietnamese", "Church Street Gastropubs", "BBQ Smokehouse"],
-  },
-  "Tampa": {
-    walkScore: 66, walkLabel: "Somewhat Walkable",
-    schools: ["Plant High School", "Berkeley Preparatory", "Mitchell Elementary"],
-    transit: ["TECO Streetcar (0.3 mi)", "HART Route 5 (0.1 mi)"],
-    dining: ["Ybor City Cuban", "SoHo Brunch Spots", "Channelside Seafood"],
-  },
-  "Jacksonville": {
-    walkScore: 61, walkLabel: "Somewhat Walkable",
-    schools: ["Stanton College Prep", "Bolles School", "San Jose Episcopal Day"],
-    transit: ["JTA Skyway (0.4 mi)", "JTA Route 3 (0.2 mi)"],
-    dining: ["Southern BBQ", "Riverside Brunch", "Beaches Seafood Shacks"],
-  },
-  "Fort Lauderdale": {
-    walkScore: 69, walkLabel: "Somewhat Walkable",
-    schools: ["Fort Lauderdale High", "Pine Crest School", "Bayview Elementary"],
-    transit: ["Brightline (0.3 mi)", "Broward Transit 1 (0.1 mi)"],
-    dining: ["Las Olas Cafés", "Beachside Grills", "Caribbean Fusion"],
-  },
-  "St. Petersburg": {
-    walkScore: 67, walkLabel: "Somewhat Walkable",
-    schools: ["St. Petersburg High", "Canterbury School", "Shorecrest Prep"],
-    transit: ["SunRunner BRT (0.2 mi)", "PSTA Route 4 (0.1 mi)"],
-    dining: ["Grand Central District Cafés", "Waterfront Oyster Bars", "EDGE District Gastropubs"],
-  },
-  "Boca Raton": {
-    walkScore: 63, walkLabel: "Somewhat Walkable",
-    schools: ["Boca Raton High", "Saint Andrew's School", "Addison Mizner Elementary"],
-    transit: ["Tri-Rail Boca (0.8 mi)", "Palm Tran Route 1 (0.3 mi)"],
-    dining: ["Mizner Park Dining", "Atlantic Ave Cafés", "Japanese Izakayas"],
-  },
-  "Clearwater": {
-    walkScore: 62, walkLabel: "Somewhat Walkable",
-    schools: ["Clearwater High", "Calvary Christian", "Belleair Elementary"],
-    transit: ["PSTA Route 52 (0.2 mi)", "Jolley Trolley (0.4 mi)"],
-    dining: ["Clearwater Beach Grills", "Greek Restaurants", "Craft Pizza"],
-  },
-  "Gainesville": {
-    walkScore: 71, walkLabel: "Very Walkable",
-    schools: ["Gainesville High", "Oak Hall School", "Westwood Middle"],
-    transit: ["RTS Route 5 (0.1 mi)", "UF Campus Shuttle (0.3 mi)"],
-    dining: ["College Town Burgers", "Midtown Sushi", "University Ave Cafés"],
-  },
-  "Sarasota": {
-    walkScore: 64, walkLabel: "Somewhat Walkable",
-    schools: ["Sarasota High", "Out-of-Door Academy", "Riverview High"],
-    transit: ["SCAT Route 17 (0.3 mi)", "Siesta Key Breeze (0.5 mi)"],
-    dining: ["St. Armands Circle Dining", "Waterfront Seafood", "Gulf Gate Tacos"],
+  "Atlantic City": {
+    walkScore: 70, walkLabel: "Very Walkable",
+    schools: ["Atlantic City High School", "Sovereign Ave School", "Our Lady Star of the Sea"],
+    transit: ["NJ Transit Atlantic City Line (0.3 mi)", "Jitney Bus (0.1 mi)"],
+    dining: ["Boardwalk Seafood", "Casino Fine Dining", "Italian Trattorias"],
   },
 };
 

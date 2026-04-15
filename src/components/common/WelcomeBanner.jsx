@@ -79,7 +79,7 @@ export default function WelcomeBanner({ firstName, onDismiss }) {
           <p className="text-sm font-medium leading-snug">
             Welcome to ApmtGuide
             {firstName ? `, ${firstName}` : ""}!{" "}
-            Start exploring apartments across California &amp; Florida.
+            Start exploring apartments across New York &amp; New Jersey.
           </p>
         </div>
 
