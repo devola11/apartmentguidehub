@@ -54,6 +54,8 @@ function CompareModal({ onClose }) {
                   <img
                     src={l.image_url || "https://placehold.co/300x200?text=No+Image"}
                     alt={l.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-32 sm:h-40 object-cover"
                   />
                   <button

@@ -258,10 +258,9 @@ export default function ListingDetail() {
           <ChevronIcon />
           <Link to={`/listings/${stateSlug}`} className="hover:text-[#1A73E8] transition-colors">{listing.state}</Link>
           <ChevronIcon />
-          <span className="text-[#202124] font-medium truncate max-w-[200px]">{listing.title}</span>
+          <span className="text-[#202124] font-medium truncate max-w-[100px] sm:max-w-[160px] md:max-w-[220px]">{listing.title}</span>
         </nav>
 
-        {/* ── Photo gallery ────────────────────────────────────────────── */}
         {/* ── Photo gallery (ApartmentGuide-style) ────────────────────── */}
         <PhotoGallery
           images={propertyImages}
