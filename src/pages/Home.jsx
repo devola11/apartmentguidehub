@@ -397,7 +397,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="tel:2136503746"
+              href="tel:7188148683"
               className="inline-flex items-center justify-center gap-2
                          bg-[#1A73E8] hover:bg-[#1557b0] text-white
                          font-semibold text-sm px-7 py-3 rounded-full
