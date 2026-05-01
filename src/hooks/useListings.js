@@ -94,7 +94,6 @@ export function useListings(filters = {}) {
 
     fetchListings();
     return () => { cancelled = true; };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     filters.skip,
     filters.state,

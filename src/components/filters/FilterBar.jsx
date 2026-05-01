@@ -53,7 +53,7 @@ function FilterIcon() {
   );
 }
 
-export default function FilterBar({ onFilter, stateFilter }) {
+export default function FilterBar({ onFilter }) {
   const [city,        setCity]        = useState("");
   const [bedrooms,    setBedrooms]    = useState("");
   const [bathrooms,   setBathrooms]   = useState("");

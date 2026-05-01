@@ -34,8 +34,6 @@ import { useParams, Link } from "react-router-dom";
 import { useListing } from "../hooks/useListing";
 import { useListings } from "../hooks/useListings";
 import { usePropertyImages } from "../hooks/usePropertyImages";
-import { useFavorites } from "../context/FavoritesContext";
-import { useAuth } from "../context/AuthContext";
 import ListingsMap from "../components/maps/ListingsMap";
 import NeighborhoodInfo from "../components/listings/NeighborhoodInfo";
 import { PetPolicySection } from "../components/listings/PetBadges";
@@ -96,8 +94,6 @@ export default function ListingDetail() {
   const { id } = useParams();
   const { listing, loading, error } = useListing(id);
   const { images: propertyImages } = usePropertyImages(id);
-  const { isFavorite, toggleFavorite } = useFavorites();
-  const { user } = useAuth();
 
   const { listings: similar } = useListings({
     state: listing?.state,
@@ -156,7 +152,6 @@ export default function ListingDetail() {
     );
   }
 
-  const saved    = isFavorite(listing.id);
   const imageUrl = propertyImages[0]?.image_url || listing.image_url || "https://placehold.co/800x450?text=No+Image";
   const phone    = getPhone();
 
@@ -216,7 +211,7 @@ export default function ListingDetail() {
     })),
   };
 
-  const stateSlug = listing.state?.toLowerCase().replace(/\s+/g, "");
+  const stateSlug = listing.state?.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <div className="bg-[#F8F9FA] min-h-screen">

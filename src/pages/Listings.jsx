@@ -200,7 +200,7 @@ export default function Listings({ stateFilter }) {
 
             {/* Filter bar + mobile map toggle */}
             <div className="px-4 sm:px-5 py-3 bg-[#F8F9FA] flex items-start gap-3 flex-wrap">
-              <FilterBar onFilter={handleFilter} stateFilter={stateFilter} />
+              <FilterBar onFilter={handleFilter} />
 
               {/*
                 "Show/Hide Map" button - only rendered on mobile (md:hidden).
