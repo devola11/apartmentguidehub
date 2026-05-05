@@ -3,26 +3,26 @@
 
   <!-- Home -->
   <url>
-    <loc>https://apartmentguidenext.com/</loc>
+    <loc>https://apartmentguidehub.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- All listings -->
   <url>
-    <loc>https://apartmentguidenext.com/listings</loc>
+    <loc>https://apartmentguidehub.com/listings</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- State pages -->
   <url>
-    <loc>https://apartmentguidenext.com/listings/new-york</loc>
+    <loc>https://apartmentguidehub.com/listings/texas</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apartmentguidenext.com/listings/new-jersey</loc>
+    <loc>https://apartmentguidehub.com/listings/oklahoma</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>

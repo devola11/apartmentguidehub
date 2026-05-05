@@ -1,8 +1,6 @@
-// seed.mjs — DEPRECATED: use seed_listings_nynj.sql instead.
-// This file contains old CA/FL data and is no longer used.
-// The current seed is seed_listings_nynj.sql (60 NY/NJ listings).
-//
-// Original: inserted 50 CA/FL apartment listings via JS.
+// seed.mjs — DEPRECATED: replace with a TX/OK seed SQL file before use.
+// This file contains stale CA/FL data from an earlier project iteration
+// and is no longer wired into the build. Kept for reference only.
 
 import { createClient } from "@supabase/supabase-js";
 

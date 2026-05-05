@@ -44,19 +44,19 @@ import FindApartmentModal from "../components/common/FindApartmentModal";
 const ITEMS_PER_PAGE = 10;
 
 const SEO_CONFIG = {
-  "New York": {
-    title: "Apartments for Rent in New York",
-    description: "Find apartments for rent across New York - Manhattan, Brooklyn, Queens, Bronx, and more.",
-    canonical: "/listings/new-york",
+  "Texas": {
+    title: "Apartments for Rent in Texas",
+    description: "Find apartments for rent across Texas - Houston, Dallas, Austin, San Antonio, and more.",
+    canonical: "/listings/texas",
   },
-  "New Jersey": {
-    title: "Apartments for Rent in New Jersey",
-    description: "Find apartments for rent across New Jersey - Jersey City, Hoboken, Newark, and more.",
-    canonical: "/listings/new-jersey",
+  "Oklahoma": {
+    title: "Apartments for Rent in Oklahoma",
+    description: "Find apartments for rent across Oklahoma - Oklahoma City, Tulsa, Norman, Edmond, and more.",
+    canonical: "/listings/oklahoma",
   },
   default: {
     title: "All Apartments for Rent",
-    description: "Browse all verified apartment listings across New York and New Jersey.",
+    description: "Browse all verified apartment listings across Texas and Oklahoma.",
     canonical: "/listings",
   },
 };
@@ -122,7 +122,7 @@ export default function Listings({ stateFilter }) {
   const currentPage   = Math.min(page, totalPages);
 
   const seo           = SEO_CONFIG[stateFilter] || SEO_CONFIG.default;
-  const locationLabel = stateFilter || "New York & New Jersey";
+  const locationLabel = stateFilter || "Texas & Oklahoma";
   const countLabel    = loading
     ? "Loading…"
     : `${total} Apartment${total !== 1 ? "s" : ""} for Rent in ${locationLabel}`;
@@ -375,7 +375,7 @@ export default function Listings({ stateFilter }) {
               {/* Contact details */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5">
                 <a
-                  href="tel:7188148683"
+                  href="tel:7138148683"
                   className="flex items-center gap-2 text-sm text-[#202124]
                              hover:text-[#1A73E8] transition-colors"
                 >
@@ -386,7 +386,7 @@ export default function Listings({ stateFilter }) {
                              1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57
                              3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
                   </svg>
-                  (718) 814-8683
+                  (713) 814-8683
                 </a>
                 <span className="hidden sm:block text-[#E0E0E0]">|</span>
                 {/*
@@ -409,7 +409,7 @@ export default function Listings({ stateFilter }) {
                              0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
-                  info@apartmentguidenext.com
+                  info@apartmentguidehub.com
                 </button>
               </div>
 

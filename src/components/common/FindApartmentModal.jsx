@@ -50,14 +50,14 @@ function CalendarIcon() {
 
 // ── City options ─────────────────────────────────────────────────────────────
 
-const NY_CITIES = [
-  "Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island",
-  "Harlem", "Astoria", "Williamsburg", "Long Island City", "Park Slope",
+const TX_CITIES = [
+  "Houston", "Dallas", "Austin", "San Antonio", "Fort Worth",
+  "El Paso", "Arlington", "Plano", "Frisco", "Irving",
 ];
 
-const NJ_CITIES = [
-  "Jersey City", "Hoboken", "Newark", "Paterson", "Elizabeth",
-  "New Brunswick", "Trenton", "Princeton", "Morristown", "Atlantic City",
+const OK_CITIES = [
+  "Oklahoma City", "Tulsa", "Norman", "Edmond", "Broken Arrow",
+  "Lawton", "Stillwater", "Moore", "Enid", "Bartlesville",
 ];
 
 // ── Shared input class ────────────────────────────────────────────────────────
@@ -256,13 +256,13 @@ export default function FindApartmentModal({ isOpen, onClose }) {
             className={inputCls}
           >
             <option value="">Preferred City</option>
-            <optgroup label="New York">
-              {NY_CITIES.map((c) => (
+            <optgroup label="Texas">
+              {TX_CITIES.map((c) => (
                 <option key={c} value={c}>{c}</option>
               ))}
             </optgroup>
-            <optgroup label="New Jersey">
-              {NJ_CITIES.map((c) => (
+            <optgroup label="Oklahoma">
+              {OK_CITIES.map((c) => (
                 <option key={c} value={c}>{c}</option>
               ))}
             </optgroup>

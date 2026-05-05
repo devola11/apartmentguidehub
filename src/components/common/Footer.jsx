@@ -182,10 +182,10 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <p className="text-white font-bold text-lg mb-2">
-              ApartmentGuide<span className="text-brand-500">Next</span>
+              ApartmentGuide<span className="text-brand-500">Hub</span>
             </p>
             <p className="text-sm leading-relaxed text-gray-400 mb-4">
-              Find verified apartment listings across New York and New Jersey. Real homes, real prices.
+              Find verified apartment listings across Texas and Oklahoma. Real homes, real prices.
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3">
@@ -215,13 +215,13 @@ export default function Footer() {
             <p className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Browse</p>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/listings/new-york" className="hover:text-white transition-colors duration-150">
-                  New York
+                <Link to="/listings/texas" className="hover:text-white transition-colors duration-150">
+                  Texas
                 </Link>
               </li>
               <li>
-                <Link to="/listings/new-jersey" className="hover:text-white transition-colors duration-150">
-                  New Jersey
+                <Link to="/listings/oklahoma" className="hover:text-white transition-colors duration-150">
+                  Oklahoma
                 </Link>
               </li>
               <li>
@@ -269,9 +269,9 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row
                         items-center justify-between gap-2 text-xs text-gray-400">
-          <p>© {new Date().getFullYear()} ApartmentGuideNext. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ApartmentGuideHub. All rights reserved.</p>
           <p>
-            ApartmentGuideNext is powered by{" "}
+            ApartmentGuideHub is powered by{" "}
             <a href={AG_URL} target="_blank" rel="noopener noreferrer"
               className="text-gray-400 hover:text-white underline transition-colors duration-150">
               ApartmentGuide.com

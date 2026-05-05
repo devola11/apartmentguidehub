@@ -86,7 +86,7 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="text-xl font-bold text-[#202124] tracking-tight">
-            ApartmentGuide<span className="text-brand-600">Next</span>
+            ApartmentGuide<span className="text-brand-600">Hub</span>
           </span>
         </Link>
 
@@ -94,8 +94,8 @@ export default function Navbar() {
         {/* gap-6 is tighter than the original gap-8, matching the tablet spec */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           <NavLink to="/listings"            className={linkClass}>Search</NavLink>
-          <NavLink to="/listings/new-york"    className={linkClass}>New York</NavLink>
-          <NavLink to="/listings/new-jersey" className={linkClass}>New Jersey</NavLink>
+          <NavLink to="/listings/texas"      className={linkClass}>Texas</NavLink>
+          <NavLink to="/listings/oklahoma"   className={linkClass}>Oklahoma</NavLink>
         </div>
 
         {/* Right side - desktop auth (hidden on mobile) + hamburger (mobile only) */}
@@ -164,8 +164,8 @@ export default function Navbar() {
 
           {/* Navigation links - full-width rows with 44px+ tap targets */}
           <NavLink to="/listings"            className={mobileLinkClass} onClick={() => setMenuOpen(false)}>Search</NavLink>
-          <NavLink to="/listings/new-york"    className={mobileLinkClass} onClick={() => setMenuOpen(false)}>New York</NavLink>
-          <NavLink to="/listings/new-jersey" className={mobileLinkClass} onClick={() => setMenuOpen(false)}>New Jersey</NavLink>
+          <NavLink to="/listings/texas"      className={mobileLinkClass} onClick={() => setMenuOpen(false)}>Texas</NavLink>
+          <NavLink to="/listings/oklahoma"   className={mobileLinkClass} onClick={() => setMenuOpen(false)}>Oklahoma</NavLink>
 
           {/* Auth section - adapts based on signed-in state */}
           {user ? (

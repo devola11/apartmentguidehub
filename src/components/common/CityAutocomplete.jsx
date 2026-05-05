@@ -27,31 +27,31 @@
 import { useId, useState, useRef, useEffect } from "react";
 
 const CITIES = [
-  // New York
-  { city: "Manhattan",        state: "New York"   },
-  { city: "Brooklyn",         state: "New York"   },
-  { city: "Queens",           state: "New York"   },
-  { city: "Bronx",            state: "New York"   },
-  { city: "Staten Island",    state: "New York"   },
-  { city: "Harlem",           state: "New York"   },
-  { city: "Astoria",          state: "New York"   },
-  { city: "Williamsburg",     state: "New York"   },
-  { city: "Long Island City", state: "New York"   },
-  { city: "Park Slope",       state: "New York"   },
-  { city: "Bushwick",         state: "New York"   },
-  { city: "Upper East Side",  state: "New York"   },
-  { city: "Upper West Side",  state: "New York"   },
-  // New Jersey
-  { city: "Jersey City",      state: "New Jersey" },
-  { city: "Hoboken",          state: "New Jersey" },
-  { city: "Newark",           state: "New Jersey" },
-  { city: "Paterson",         state: "New Jersey" },
-  { city: "Elizabeth",         state: "New Jersey" },
-  { city: "New Brunswick",    state: "New Jersey" },
-  { city: "Trenton",          state: "New Jersey" },
-  { city: "Princeton",        state: "New Jersey" },
-  { city: "Morristown",       state: "New Jersey" },
-  { city: "Atlantic City",    state: "New Jersey" },
+  // Texas
+  { city: "Houston",          state: "Texas"      },
+  { city: "Dallas",           state: "Texas"      },
+  { city: "Austin",           state: "Texas"      },
+  { city: "San Antonio",      state: "Texas"      },
+  { city: "Fort Worth",       state: "Texas"      },
+  { city: "El Paso",          state: "Texas"      },
+  { city: "Arlington",        state: "Texas"      },
+  { city: "Plano",            state: "Texas"      },
+  { city: "Frisco",           state: "Texas"      },
+  { city: "Irving",           state: "Texas"      },
+  { city: "McKinney",         state: "Texas"      },
+  { city: "Corpus Christi",   state: "Texas"      },
+  { city: "Lubbock",          state: "Texas"      },
+  // Oklahoma
+  { city: "Oklahoma City",    state: "Oklahoma"   },
+  { city: "Tulsa",            state: "Oklahoma"   },
+  { city: "Norman",           state: "Oklahoma"   },
+  { city: "Edmond",           state: "Oklahoma"   },
+  { city: "Broken Arrow",     state: "Oklahoma"   },
+  { city: "Lawton",           state: "Oklahoma"   },
+  { city: "Stillwater",       state: "Oklahoma"   },
+  { city: "Moore",            state: "Oklahoma"   },
+  { city: "Enid",             state: "Oklahoma"   },
+  { city: "Bartlesville",     state: "Oklahoma"   },
 ];
 
 function PinIcon() {

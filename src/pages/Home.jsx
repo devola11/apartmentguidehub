@@ -12,12 +12,12 @@ import SendMessageModal from "../components/common/SendMessageModal";
 import { RecentlyViewedRow } from "../components/listings/RecentlyViewed";
 
 const CITIES = [
-  { name: "Manhattan",   state: "New York",    count: 14, img: "/cities/manhattan.webp" },
-  { name: "Brooklyn",    state: "New York",    count: 8,  img: "/cities/brooklyn.webp" },
-  { name: "Jersey City", state: "New Jersey",  count: 8,  img: "/cities/jersey-city.webp" },
-  { name: "Hoboken",     state: "New Jersey",  count: 5,  img: "/cities/hoboken.webp" },
-  { name: "Queens",      state: "New York",    count: 5,  img: "/cities/queens.webp" },
-  { name: "Newark",      state: "New Jersey",  count: 5,  img: "/cities/newark.webp" },
+  { name: "Houston",       state: "Texas",     count: 14, img: "/cities/houston.webp" },
+  { name: "Dallas",        state: "Texas",     count: 8,  img: "/cities/dallas.webp" },
+  { name: "Austin",        state: "Texas",     count: 8,  img: "/cities/austin.webp" },
+  { name: "San Antonio",   state: "Texas",     count: 5,  img: "/cities/san-antonio.webp" },
+  { name: "Oklahoma City", state: "Oklahoma",  count: 5,  img: "/cities/oklahoma-city.webp" },
+  { name: "Tulsa",         state: "Oklahoma",  count: 5,  img: "/cities/tulsa.webp" },
 ];
 
 const HOW_IT_WORKS = [
@@ -57,14 +57,14 @@ const HOW_IT_WORKS = [
 const HOME_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "ApartmentGuideNext",
-  url: "https://apartmentguidenext.com",
-  description: "Browse verified apartments for rent across New York and New Jersey.",
+  name: "ApartmentGuideHub",
+  url: "https://apartmentguidehub.com",
+  description: "Browse verified apartments for rent across Texas and Oklahoma.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://apartmentguidenext.com/listings?q={search_term_string}",
+      urlTemplate: "https://apartmentguidehub.com/listings?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -146,9 +146,9 @@ export default function Home() {
         />
       )}
 
-      {/* No title prop — SEO uses the full default: "ApartmentGuideNext - Find Apartments for Rent in New York & New Jersey" */}
+      {/* No title prop — SEO uses the full default: "ApartmentGuideHub - Find Apartments for Rent in Texas & Oklahoma" */}
       <SEO
-        description="Browse 60+ verified apartments for rent across New York and New Jersey. Filter by city, price, and bedrooms. Find your perfect home with ApartmentGuideNext."
+        description="Browse 60+ verified apartments for rent across Texas and Oklahoma. Filter by city, price, and bedrooms. Find your perfect home with ApartmentGuideHub."
         canonical="/"
         jsonLd={HOME_JSON_LD}
       />
@@ -226,7 +226,7 @@ export default function Home() {
             50+ Verified Listings
           </span>
           <span className="text-gray-300 hidden sm:block">|</span>
-          <span>New York &amp; New Jersey</span>
+          <span>Texas &amp; Oklahoma</span>
           <span className="text-gray-300 hidden sm:block">|</span>
           <span>Updated Daily</span>
         </div>
@@ -397,7 +397,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="tel:7188148683"
+              href="tel:7138148683"
               className="inline-flex items-center justify-center gap-2
                          bg-[#1A73E8] hover:bg-[#1557b0] text-white
                          font-semibold text-sm px-7 py-3 rounded-full

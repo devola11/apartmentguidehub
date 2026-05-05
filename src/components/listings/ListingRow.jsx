@@ -21,7 +21,7 @@ import { useAuth } from "../../context/AuthContext";
 import { PetBadgesSmall } from "./PetBadges";
 
 function getPhone() {
-  return "(718) 814-8683";
+  return "(713) 814-8683";
 }
 
 function BedIcon()  { return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>; }
@@ -85,7 +85,7 @@ export default function ListingRow({ listing, isActive, onMouseEnter, onMouseLea
           />
           {/* State badge */}
           <span className="absolute top-2 left-2 bg-[#1A73E8] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-            {listing.state === "New York" ? "NY" : listing.state === "New Jersey" ? "NJ" : listing.state}
+            {listing.state === "Texas" ? "TX" : listing.state === "Oklahoma" ? "OK" : listing.state}
           </span>
           {/* Favorite button - min 44px tap target */}
           <button

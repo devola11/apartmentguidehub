@@ -1,8 +1,8 @@
-# ApartmentGuideNext
+# ApartmentGuideHub
 
-A full-stack apartment listing platform for renters and landlords across **New York** and **New Jersey**. Browse 60+ verified listings, filter by city/price/bedrooms, save favorites, and contact property managers directly.
+A full-stack apartment listing platform for renters and landlords across **Texas** and **Oklahoma**. Browse 60+ verified listings, filter by city/price/bedrooms, save favorites, and contact property managers directly.
 
-**Live:** [https://apartmentguidenext.com](https://apartmentguidenext.com)
+**Live:** [https://apartmentguidehub.com](https://apartmentguidehub.com)
 
 ---
 
@@ -23,7 +23,7 @@ A full-stack apartment listing platform for renters and landlords across **New Y
 
 ## Features
 
-- Browse and filter 60+ apartment listings (New York & New Jersey)
+- Browse and filter 60+ apartment listings (Texas & Oklahoma)
 - Interactive Leaflet map with price markers
 - User auth (sign up / log in / sign out) via Supabase
 - Save and manage favorite listings

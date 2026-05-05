@@ -1,155 +1,161 @@
 // src/lib/neighborhoodData.js
 // Realistic neighborhood data keyed by city.
 // Walk scores are higher for dense/downtown areas, lower for suburban areas.
-// NYC areas have very high walk scores (85-98).
+// Texas/Oklahoma metros generally have lower walk scores than dense NE cities.
 
 const CITY_DATA = {
-  // ── New York ──────────────────────────────────────────────────────────────
-  "Manhattan": {
-    walkScore: 97, walkLabel: "Walker's Paradise",
-    schools: ["Stuyvesant High School", "PS 6 Lillie D. Blake", "Trinity School"],
-    transit: ["Subway 4/5/6 (0.1 mi)", "Crosstown M86 Bus (0.1 mi)"],
-    dining: ["Upscale Steakhouses", "Pizza by the Slice", "Dim Sum Parlors"],
+  // ── Texas ────────────────────────────────────────────────────────────────
+  "Houston": {
+    walkScore: 72, walkLabel: "Very Walkable",
+    schools: ["Lamar High School", "Travis Elementary", "St. John's School"],
+    transit: ["METRORail Red Line (0.2 mi)", "Route 82 Bus (0.1 mi)"],
+    dining: ["Tex-Mex Cantinas", "Vietnamese Pho Houses", "Smoked BBQ Pits"],
   },
-  "New York": {
-    walkScore: 97, walkLabel: "Walker's Paradise",
-    schools: ["Stuyvesant High School", "PS 6 Lillie D. Blake", "Trinity School"],
-    transit: ["Subway 4/5/6 (0.1 mi)", "Crosstown M86 Bus (0.1 mi)"],
-    dining: ["Upscale Steakhouses", "Pizza by the Slice", "Dim Sum Parlors"],
+  "Texas": {
+    walkScore: 70, walkLabel: "Very Walkable",
+    schools: ["Lamar High School", "Travis Elementary", "St. John's School"],
+    transit: ["METRORail Red Line (0.2 mi)", "Route 82 Bus (0.1 mi)"],
+    dining: ["Tex-Mex Cantinas", "Smoked BBQ Pits", "Gulf Coast Seafood"],
   },
-  "Brooklyn": {
-    walkScore: 91, walkLabel: "Walker's Paradise",
-    schools: ["Brooklyn Tech High", "PS 321 William Penn", "Saint Ann's School"],
-    transit: ["Subway F/G (0.2 mi)", "B41 Bus (0.1 mi)"],
-    dining: ["Farm-to-Table Bistros", "Artisan Pizza", "Caribbean Jerk Spots"],
+  "Dallas": {
+    walkScore: 75, walkLabel: "Very Walkable",
+    schools: ["Booker T. Washington HSPVA", "William B. Travis Academy", "Hockaday School"],
+    transit: ["DART Light Rail (0.2 mi)", "Route 36 Bus (0.1 mi)"],
+    dining: ["Uptown Steakhouses", "Korean BBQ Joints", "Deep Ellum Gastropubs"],
   },
-  "Queens": {
-    walkScore: 86, walkLabel: "Very Walkable",
-    schools: ["Townsend Harris High", "PS 122 Mamie Fay", "The Scholar's Academy"],
-    transit: ["Subway N/W (0.2 mi)", "Q69 Bus (0.1 mi)"],
-    dining: ["Greek Tavernas", "Colombian Bakeries", "Thai Street Food"],
-  },
-  "Astoria": {
-    walkScore: 90, walkLabel: "Walker's Paradise",
-    schools: ["Frank Sinatra School of the Arts", "PS 122 Mamie Fay", "Long Island City STEAM Academy"],
-    transit: ["Subway N/W (0.2 mi)", "Q69 Bus (0.1 mi)"],
-    dining: ["Greek Tavernas", "Egyptian Bakeries", "Craft Cocktail Bars"],
-  },
-  "Williamsburg": {
-    walkScore: 93, walkLabel: "Walker's Paradise",
-    schools: ["Brooklyn Latin School", "PS 84 José de Diego", "Williamsburg Prep"],
-    transit: ["Subway L (0.1 mi)", "B62 Bus (0.1 mi)"],
-    dining: ["Smoked Meat Spots", "Rooftop Bars", "Artisan Coffee Roasters"],
-  },
-  "Long Island City": {
-    walkScore: 89, walkLabel: "Very Walkable",
-    schools: ["Hunters Point Community MS", "PS 1 Alfred E. Smith", "WNYC Studios Academy"],
-    transit: ["Subway 7 (0.2 mi)", "NYC Ferry (0.3 mi)"],
-    dining: ["Waterfront Breweries", "Modern Korean", "Food Halls"],
-  },
-  "Park Slope": {
-    walkScore: 95, walkLabel: "Walker's Paradise",
-    schools: ["MS 51 William Alexander", "PS 321 William Penn", "Berkeley Carroll School"],
-    transit: ["Subway F/G (0.2 mi)", "B67 Bus (0.1 mi)"],
-    dining: ["5th Ave Brunch Spots", "Prospect Park Cafés", "Organic Juice Bars"],
-  },
-  "Bushwick": {
-    walkScore: 88, walkLabel: "Very Walkable",
-    schools: ["Bushwick School for Social Justice", "PS 123 Suydam", "Academy of Urban Planning"],
-    transit: ["Subway M/L (0.2 mi)", "B60 Bus (0.1 mi)"],
-    dining: ["Trendy Taco Spots", "Gallery Cafés", "Craft Breweries"],
-  },
-  "Harlem": {
-    walkScore: 92, walkLabel: "Walker's Paradise",
-    schools: ["Frederick Douglass Academy", "PS 185 John M. Langston", "Thurgood Marshall Academy"],
-    transit: ["Subway A/B/C/D (0.2 mi)", "M7 Bus (0.1 mi)"],
-    dining: ["Soul Food Restaurants", "West African Cuisine", "Jazz Club Lounges"],
-  },
-  "Upper East Side": {
-    walkScore: 96, walkLabel: "Walker's Paradise",
-    schools: ["Dalton School", "PS 6 Lillie D. Blake", "Chapin School"],
-    transit: ["Subway 4/5/6 (0.1 mi)", "M79 Crosstown Bus (0.1 mi)"],
-    dining: ["Madison Ave Cafés", "French Bistros", "Classic Delis"],
-  },
-  "Upper West Side": {
-    walkScore: 96, walkLabel: "Walker's Paradise",
-    schools: ["Trinity School", "PS 87 William Sherman", "Collegiate School"],
-    transit: ["Subway 1/2/3 (0.1 mi)", "M104 Bus (0.1 mi)"],
-    dining: ["Columbus Ave Brunch", "Zabar's Deli", "Lincoln Center Dining"],
-  },
-  "Bronx": {
+  "Austin": {
     walkScore: 78, walkLabel: "Very Walkable",
-    schools: ["Bronx Science High", "PS 75 School of Research", "Riverdale Country School"],
-    transit: ["Subway 4/5/6 (0.3 mi)", "Bx1 Bus (0.1 mi)"],
-    dining: ["Dominican Restaurants", "Italian Delis on Arthur Ave", "Jamaican Patty Shops"],
+    schools: ["Austin High School", "Bryker Woods Elementary", "St. Stephen's Episcopal"],
+    transit: ["MetroRail Red Line (0.3 mi)", "Route 803 Rapid Bus (0.1 mi)"],
+    dining: ["South Congress Food Trucks", "Craft Breweries", "Breakfast Taco Trailers"],
   },
-  "Staten Island": {
+  "San Antonio": {
+    walkScore: 68, walkLabel: "Somewhat Walkable",
+    schools: ["Brackenridge High School", "Bonham Academy", "Saint Mary's Hall"],
+    transit: ["VIA Primo Bus (0.2 mi)", "Route 3 Bus (0.1 mi)"],
+    dining: ["River Walk Restaurants", "Authentic Mexican Cocinas", "Pearl District Eateries"],
+  },
+  "Fort Worth": {
+    walkScore: 65, walkLabel: "Somewhat Walkable",
+    schools: ["Paschal High School", "Tanglewood Elementary", "All Saints' Episcopal"],
+    transit: ["TRE Commuter Rail (0.3 mi)", "Trinity Metro Route 2 (0.1 mi)"],
+    dining: ["Stockyards Steakhouses", "Magnolia Ave Bistros", "Tex-Mex Patios"],
+  },
+  "El Paso": {
+    walkScore: 62, walkLabel: "Somewhat Walkable",
+    schools: ["Coronado High School", "Mesita Elementary", "Cathedral High School"],
+    transit: ["Sun Metro Brio (0.2 mi)", "Route 8 Bus (0.1 mi)"],
+    dining: ["Mexican Mole Restaurants", "Border Sonoran Hot Dogs", "Mission Trail Cafés"],
+  },
+  "Arlington": {
+    walkScore: 55, walkLabel: "Somewhat Walkable",
+    schools: ["Martin High School", "Lamar High School", "Oakridge School"],
+    transit: ["VIA On-Demand Rideshare (0.2 mi)", "Route 1 Bus (0.3 mi)"],
+    dining: ["Stadium District Sports Bars", "Vietnamese Bánh Mì Shops", "Chain Steakhouses"],
+  },
+  "Plano": {
+    walkScore: 50, walkLabel: "Car-Dependent",
+    schools: ["Plano Senior High", "Shepton High School", "Prince of Peace Catholic"],
+    transit: ["DART Red Line (0.4 mi)", "Route 347 Bus (0.2 mi)"],
+    dining: ["Legacy West Restaurants", "Asian Fusion Bistros", "Suburban Brunch Spots"],
+  },
+  "Frisco": {
+    walkScore: 48, walkLabel: "Car-Dependent",
+    schools: ["Frisco High School", "Wakeland High School", "Legacy Christian Academy"],
+    transit: ["DART Bus 360 (0.4 mi)", "Frisco Connect Shuttle (0.2 mi)"],
+    dining: ["The Star District Eateries", "Sushi Bars", "Sports Bar Chains"],
+  },
+  "Irving": {
     walkScore: 58, walkLabel: "Somewhat Walkable",
-    schools: ["Tottenville High School", "PS 48 William G. Wilcox", "Staten Island Academy"],
-    transit: ["Staten Island Ferry (0.5 mi)", "SIR Train (0.3 mi)"],
-    dining: ["Waterfront Seafood", "Italian Red-Sauce Joints", "Sri Lankan Cuisine"],
+    schools: ["Irving High School", "MacArthur High School", "Cistercian Preparatory"],
+    transit: ["DART Orange Line (0.3 mi)", "Route 229 Bus (0.1 mi)"],
+    dining: ["Las Colinas Restaurants", "Indian Tandoor Houses", "Tex-Mex Cantinas"],
+  },
+  "McKinney": {
+    walkScore: 52, walkLabel: "Somewhat Walkable",
+    schools: ["McKinney High School", "Boyd High School", "Imagine International Academy"],
+    transit: ["DART Bus 208 (0.4 mi)", "McKinney Avenue Trolley (0.2 mi)"],
+    dining: ["Historic Downtown Square Cafés", "Texas BBQ Smokers", "Boutique Wine Bars"],
+  },
+  "Corpus Christi": {
+    walkScore: 48, walkLabel: "Car-Dependent",
+    schools: ["Carroll High School", "King High School", "Incarnate Word Academy"],
+    transit: ["CCRTA Route 5 Bus (0.2 mi)", "Harbor Ferry (0.5 mi)"],
+    dining: ["Bayfront Seafood Grills", "Tex-Mex Mariscos", "Beach Bars"],
+  },
+  "Lubbock": {
+    walkScore: 45, walkLabel: "Car-Dependent",
+    schools: ["Lubbock High School", "Coronado High School", "Trinity Christian School"],
+    transit: ["Citibus Route 4 (0.2 mi)", "Texas Tech Shuttle (0.1 mi)"],
+    dining: ["West Texas Steakhouses", "Tex-Mex Enchiladas", "College Bars"],
   },
 
-  // ── New Jersey ────────────────────────────────────────────────────────────
-  "Jersey City": {
-    walkScore: 87, walkLabel: "Very Walkable",
-    schools: ["McNair Academic High", "PS 3 Dr. Ronald McNair", "Stevens Cooperative School"],
-    transit: ["PATH Train (0.2 mi)", "Hudson-Bergen Light Rail (0.3 mi)"],
-    dining: ["India Square Restaurants", "Waterfront Steakhouses", "Filipino Bakeries"],
+  // ── Oklahoma ─────────────────────────────────────────────────────────────
+  "Oklahoma City": {
+    walkScore: 60, walkLabel: "Somewhat Walkable",
+    schools: ["Classen School of Advanced Studies", "Wilson Elementary", "Casady School"],
+    transit: ["OKC Streetcar (0.2 mi)", "EMBARK Route 5 Bus (0.1 mi)"],
+    dining: ["Bricktown Steakhouses", "Vietnamese District Pho", "BBQ Joints"],
   },
-  "Hoboken": {
-    walkScore: 94, walkLabel: "Walker's Paradise",
-    schools: ["Hoboken High School", "All Saints Episcopal Day School", "Stevens Cooperative School"],
-    transit: ["PATH Train (0.2 mi)", "NJ Transit Bus 126 (0.1 mi)"],
-    dining: ["Washington St Restaurants", "Italian Delis", "Craft Beer Bars"],
+  "Oklahoma": {
+    walkScore: 58, walkLabel: "Somewhat Walkable",
+    schools: ["Classen School of Advanced Studies", "Wilson Elementary", "Casady School"],
+    transit: ["OKC Streetcar (0.2 mi)", "EMBARK Route 5 Bus (0.1 mi)"],
+    dining: ["Bricktown Steakhouses", "BBQ Joints", "Native Fry Bread Stands"],
   },
-  "Newark": {
-    walkScore: 80, walkLabel: "Very Walkable",
-    schools: ["Science Park High School", "Robert Treat Academy", "Newark Academy"],
-    transit: ["PATH Train (0.3 mi)", "NJ Transit (0.2 mi)"],
-    dining: ["Ironbound Portuguese", "Brazilian Steakhouses", "Spanish Tapas Bars"],
+  "Tulsa": {
+    walkScore: 62, walkLabel: "Somewhat Walkable",
+    schools: ["Booker T. Washington HS", "Edison Preparatory", "Holland Hall School"],
+    transit: ["Tulsa Transit Route 100 (0.2 mi)", "BRT Aero Line (0.1 mi)"],
+    dining: ["Cherry Street Bistros", "Brady Arts District Pubs", "Soul Food Diners"],
   },
-  "Paterson": {
-    walkScore: 74, walkLabel: "Very Walkable",
-    schools: ["Eastside High School", "Paterson Academy", "PANTHER Academy"],
-    transit: ["NJ Transit Bus 161 (0.2 mi)", "Paterson Station (0.5 mi)"],
-    dining: ["Turkish Kebab Houses", "Arabic Bakeries", "Peruvian Chicken Spots"],
+  "Norman": {
+    walkScore: 55, walkLabel: "Somewhat Walkable",
+    schools: ["Norman High School", "Norman North High", "Community Christian School"],
+    transit: ["CART Route 11 (0.2 mi)", "OU Crimson Cruiser (0.1 mi)"],
+    dining: ["Campus Corner Restaurants", "Craft Breweries", "OK Steakhouses"],
   },
-  "Elizabeth": {
-    walkScore: 72, walkLabel: "Very Walkable",
-    schools: ["Elizabeth High School", "Thomas Jefferson Arts Academy", "Elmora Hills Elementary"],
-    transit: ["NJ Transit Elizabeth Station (0.3 mi)", "Bus 113 (0.1 mi)"],
-    dining: ["Colombian Restaurants", "Portuguese Bakeries", "Cuban Sandwich Shops"],
+  "Edmond": {
+    walkScore: 50, walkLabel: "Car-Dependent",
+    schools: ["Edmond Memorial HS", "Edmond North HS", "Oklahoma Christian School"],
+    transit: ["Citylink Edmond Route A (0.3 mi)", "EMBARK 023 Bus (0.4 mi)"],
+    dining: ["Downtown Edmond Eateries", "Italian Trattorias", "Suburban Coffee Shops"],
   },
-  "New Brunswick": {
-    walkScore: 82, walkLabel: "Very Walkable",
-    schools: ["New Brunswick High School", "Rutgers Preparatory School", "Christ the King Elementary"],
-    transit: ["NJ Transit Train (0.2 mi)", "Rutgers Bus (0.1 mi)"],
-    dining: ["George St Restaurants", "Pho Houses", "College Town Brewpubs"],
+  "Broken Arrow": {
+    walkScore: 45, walkLabel: "Car-Dependent",
+    schools: ["Broken Arrow Senior High", "Oneta Ridge Middle", "Lincoln Christian School"],
+    transit: ["Tulsa Transit Route 219 (0.4 mi)", "Rose District Trolley (0.3 mi)"],
+    dining: ["Rose District Cafés", "Family Steakhouses", "BBQ Smokehouses"],
   },
-  "Trenton": {
-    walkScore: 68, walkLabel: "Somewhat Walkable",
-    schools: ["Trenton Central High", "Foundation Collegiate Academy", "Trenton Catholic Academy"],
-    transit: ["NJ Transit Trenton Station (0.3 mi)", "SEPTA R-Line (0.3 mi)"],
-    dining: ["Italian Red-Sauce Joints", "Dominican Cafés", "State House District Pubs"],
+  "Lawton": {
+    walkScore: 42, walkLabel: "Car-Dependent",
+    schools: ["Lawton High School", "Eisenhower High School", "St. Mary's Catholic School"],
+    transit: ["LATS Route 4 Bus (0.3 mi)", "Fort Sill Shuttle (0.5 mi)"],
+    dining: ["Cattlemen's Steakhouses", "Korean BBQ", "Fort Sill Diners"],
   },
-  "Princeton": {
-    walkScore: 79, walkLabel: "Very Walkable",
-    schools: ["Princeton High School", "Princeton Day School", "The Lawrenceville School"],
-    transit: ["Princeton Dinky Train (0.3 mi)", "NJ Transit Bus 606 (0.2 mi)"],
-    dining: ["Nassau St Bistros", "Farm-to-Table Restaurants", "Ivy League Coffee Shops"],
+  "Stillwater": {
+    walkScore: 58, walkLabel: "Somewhat Walkable",
+    schools: ["Stillwater High School", "Stillwater Junior High", "Sangre Ridge Elementary"],
+    transit: ["Stillwater Transit Route 1 (0.2 mi)", "OSU Orange Line (0.1 mi)"],
+    dining: ["The Strip Bars", "Eskimo Joe's", "Campus Coffee Shops"],
   },
-  "Morristown": {
-    walkScore: 76, walkLabel: "Very Walkable",
-    schools: ["Morristown High School", "Morristown-Beard School", "Assumption School"],
-    transit: ["NJ Transit Morristown Station (0.2 mi)", "Bus MCM1 (0.1 mi)"],
-    dining: ["The Green Restaurants", "South St Gastropubs", "Artisan Bakeries"],
+  "Moore": {
+    walkScore: 46, walkLabel: "Car-Dependent",
+    schools: ["Moore High School", "Westmoore High School", "Southlake Christian Academy"],
+    transit: ["EMBARK Route 24 Bus (0.4 mi)", "I-35 Park & Ride (0.5 mi)"],
+    dining: ["Suburban Tex-Mex", "Chain Steakhouses", "Family Diners"],
   },
-  "Atlantic City": {
-    walkScore: 70, walkLabel: "Very Walkable",
-    schools: ["Atlantic City High School", "Sovereign Ave School", "Our Lady Star of the Sea"],
-    transit: ["NJ Transit Atlantic City Line (0.3 mi)", "Jitney Bus (0.1 mi)"],
-    dining: ["Boardwalk Seafood", "Casino Fine Dining", "Italian Trattorias"],
+  "Enid": {
+    walkScore: 44, walkLabel: "Car-Dependent",
+    schools: ["Enid High School", "Chisholm High School", "Oklahoma Bible Academy"],
+    transit: ["Enid Transit (0.4 mi)", "Vance AFB Shuttle (0.5 mi)"],
+    dining: ["Downtown Square Diners", "Mexican Cantinas", "Wheat Country Cafés"],
+  },
+  "Bartlesville": {
+    walkScore: 48, walkLabel: "Car-Dependent",
+    schools: ["Bartlesville High School", "Central Middle School", "Wesleyan Christian School"],
+    transit: ["Bartlesville Public Transit (0.4 mi)", "Phillips 66 Shuttle (0.3 mi)"],
+    dining: ["Frank Phillips Boulevard Eateries", "Frontier Steakhouses", "Local Coffee Shops"],
   },
 };
 
