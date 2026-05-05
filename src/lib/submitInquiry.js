@@ -27,19 +27,18 @@ export async function submitInquiry(data) {
   let web3Error     = null;
 
   // ── 1. Save to Supabase ────────────────────────────────────────────────────
+  // Only insert columns that exist in the inquiries table schema
+  // (id, listing_id, name, email, phone, message, created_at). Extra form
+  // fields like preferred_city/budget_range still go out via Web3Forms below
+  // so the email recipient sees the full submission.
   // Failures are caught and stored; execution continues to channel 2.
   try {
     const { error } = await supabase.from("inquiries").insert({
-      name:               data.name,
-      email:              data.email,
-      phone:              data.phone              || null,
-      preferred_city:     data.preferred_city     || null,
-      preferred_bedrooms: data.preferred_bedrooms || null,
-      budget_range:       data.budget_range       || null,
-      move_in_date:       data.move_in_date       || null,
-      message:            data.message            || null,
-      listing_id:         data.listing_id         || null,
-      form_source:        data.form_source,
+      name:       data.name,
+      email:      data.email,
+      phone:      data.phone      || null,
+      message:    data.message    || null,
+      listing_id: data.listing_id || null,
     });
     if (error) supabaseError = error;
   } catch (e) {
