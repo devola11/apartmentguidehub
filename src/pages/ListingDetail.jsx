@@ -486,7 +486,7 @@ export default function ListingDetail() {
             </section>
 
             {/* Report This Listing */}
-            <p className="text-xs text-[#9AA0A6] pb-4">
+            <p className="text-xs text-[#5F6368] pb-4">
               Something wrong with this listing?{" "}
               <a
                 href="https://www.apartmentguide.com/"

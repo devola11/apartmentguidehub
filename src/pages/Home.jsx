@@ -225,9 +225,9 @@ export default function Home() {
             </svg>
             50+ Verified Listings
           </span>
-          <span className="text-gray-300 hidden sm:block">|</span>
+          <span aria-hidden="true" className="text-gray-300 hidden sm:block">|</span>
           <span>Texas &amp; Oklahoma</span>
-          <span className="text-gray-300 hidden sm:block">|</span>
+          <span aria-hidden="true" className="text-gray-300 hidden sm:block">|</span>
           <span>Updated Daily</span>
         </div>
       </div>

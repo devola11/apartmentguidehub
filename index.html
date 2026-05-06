@@ -4,45 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Default title & description (overridden per-page via react-helmet-async) -->
-    <title>ApartmentGuideHub - Find Apartments for Rent in Texas &amp; Oklahoma</title>
-    <meta
-      name="description"
-      content="Browse 60+ verified apartments for rent across Texas and Oklahoma. Filter by city, price, and bedrooms. Find your perfect home today."
-    />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://apartmentguidehub.com/" />
+    <!--
+      Title, description, canonical, og:url, og:title, og:description,
+      twitter:title, and twitter:description are managed dynamically per route
+      by react-helmet-async (see src/components/common/SEO.jsx). Defining them
+      statically here would produce duplicate tags and trigger Lighthouse SEO
+      warnings about conflicting canonical URLs.
+    -->
+    <title>ApartmentGuideHub</title>
 
-    <!-- Open Graph (Facebook / LinkedIn / WhatsApp) -->
+    <!-- Static OG/Twitter fallbacks for crawlers without JS execution -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ApartmentGuideHub" />
-    <meta
-      property="og:title"
-      content="ApartmentGuideHub — Find Apartments for Rent in Texas &amp; Oklahoma"
-    />
-    <meta
-      property="og:description"
-      content="Browse 60+ verified apartments for rent across Texas and Oklahoma. Filter by city, price, and bedrooms."
-    />
     <meta
       property="og:image"
       content="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://apartmentguidehub.com/" />
     <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="ApartmentGuideHub — Find Apartments for Rent in Texas &amp; Oklahoma"
-    />
-    <meta
-      name="twitter:description"
-      content="Browse 60+ verified apartments for rent across Texas and Oklahoma."
-    />
     <meta
       name="twitter:image"
       content="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
@@ -61,12 +42,7 @@
       This is the LCP element on the Home page; early discovery cuts LCP
       by several seconds on slow connections.
     -->
-    <link
-      rel="preload"
-      as="image"
-      href="/hero-bg.webp"
-      fetchpriority="high"
-    />
+    <link rel="preload" as="image" href="/hero-bg.webp" fetchpriority="high" />
 
     <!-- Fonts — async (non-render-blocking) -->
     <!--
@@ -83,7 +59,10 @@
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript>
       <link
@@ -97,3 +76,4 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+2

@@ -183,8 +183,10 @@ export default function Listings({ stateFilter }) {
                 {countLabel}
               </p>
               <div className="flex items-center gap-2 shrink-0">
-                <label className="text-xs text-[#5F6368] hidden sm:block">Sort:</label>
+                <label htmlFor="listings-sort" className="text-xs text-[#5F6368] hidden sm:block">Sort:</label>
                 <select
+                  id="listings-sort"
+                  aria-label="Sort listings"
                   value={sort}
                   onChange={e => setSort(e.target.value)}
                   className="text-sm border border-[#E0E0E0] rounded-lg px-2 sm:px-3 py-1.5

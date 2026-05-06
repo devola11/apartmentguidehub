@@ -16,7 +16,7 @@
 //   horizontally. A slide-up panel gives each filter full width and avoids
 //   horizontal scroll. This is the pattern used by Zillow and Apartments.com.
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import CityAutocomplete from "../common/CityAutocomplete";
 
 const PRICE_RANGES = [
@@ -60,8 +60,29 @@ export default function FilterBar({ onFilter }) {
   const [priceKey,    setPriceKey]    = useState("0");
   const [petFriendly, setPetFriendly] = useState(false);
 
+  // Stable IDs that are unique to this component instance. The desktop bar
+  // and the mobile panel both call renderFilters(), but only one is visible
+  // at a time, so reusing IDs across them is safe and keeps htmlFor wiring
+  // simple.
+  const uid = useId();
+  const bedsId  = `${uid}-beds`;
+  const bathsId = `${uid}-baths`;
+  const priceId = `${uid}-price`;
+  const petId   = `${uid}-pet`;
+
   // Controls the mobile slide-up panel
   const [panelOpen, setPanelOpen] = useState(false);
+
+  // Stable, unique IDs so each <label htmlFor> binds to its <select id>.
+  // Suffixed with "-d"/"-m" because the desktop bar and mobile panel both
+  // render the same controls, and duplicate IDs in one DOM break a11y.
+  const baseId = useId();
+  const ids = (variant) => ({
+    beds:  `${baseId}-beds-${variant}`,
+    baths: `${baseId}-baths-${variant}`,
+    price: `${baseId}-price-${variant}`,
+    pet:   `${baseId}-pet-${variant}`,
+  });
 
   function emit(overrides = {}) {
     const pr = PRICE_RANGES[Number(overrides.priceKey ?? priceKey)];
@@ -126,8 +147,8 @@ export default function FilterBar({ onFilter }) {
 
         {/* Beds */}
         <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Beds</label>
-          <select value={bedrooms} onChange={e => handleBeds(e.target.value)} className={`${inputCls} ${wSel} min-h-[44px]`}>
+          <label htmlFor={bedsId} className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Beds</label>
+          <select id={bedsId} value={bedrooms} onChange={e => handleBeds(e.target.value)} className={`${inputCls} ${wSel} min-h-[44px]`}>
             <option value="">Any</option>
             <option value="0">Studio</option>
             <option value="1">1+</option>
@@ -138,8 +159,8 @@ export default function FilterBar({ onFilter }) {
 
         {/* Baths */}
         <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Baths</label>
-          <select value={bathrooms} onChange={e => handleBaths(e.target.value)} className={`${inputCls} ${wSel} min-h-[44px]`}>
+          <label htmlFor={bathsId} className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Baths</label>
+          <select id={bathsId} value={bathrooms} onChange={e => handleBaths(e.target.value)} className={`${inputCls} ${wSel} min-h-[44px]`}>
             <option value="">Any</option>
             <option value="1">1+</option>
             <option value="2">2+</option>
@@ -149,8 +170,8 @@ export default function FilterBar({ onFilter }) {
 
         {/* Price Range */}
         <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Price Range</label>
-          <select value={priceKey} onChange={e => handlePrice(e.target.value)} className={`${inputCls} ${wPrice} min-h-[44px]`}>
+          <label htmlFor={priceId} className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Price Range</label>
+          <select id={priceId} value={priceKey} onChange={e => handlePrice(e.target.value)} className={`${inputCls} ${wPrice} min-h-[44px]`}>
             {PRICE_RANGES.map((r, i) => (
               <option key={i} value={i}>{r.label}</option>
             ))}
@@ -159,14 +180,19 @@ export default function FilterBar({ onFilter }) {
 
         {/* Pet Friendly */}
         <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Pet Friendly</label>
-          <label className="flex items-center gap-2 cursor-pointer min-h-[44px]">
-            <div
+          <span id={`${petId}-label`} className="text-xs font-semibold text-[#5F6368] uppercase tracking-wide">Pet Friendly</span>
+          <label htmlFor={petId} className="flex items-center gap-2 cursor-pointer min-h-[44px]">
+            <button
+              id={petId}
+              type="button"
+              role="switch"
+              aria-checked={petFriendly}
+              aria-labelledby={`${petId}-label`}
               onClick={() => handlePet(!petFriendly)}
               className={`w-10 h-5 rounded-full transition-colors relative cursor-pointer ${petFriendly ? "bg-[#1A73E8]" : "bg-gray-300"}`}
             >
-              <div className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${petFriendly ? "translate-x-5" : ""}`} />
-            </div>
+              <span className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${petFriendly ? "translate-x-5" : ""}`} />
+            </button>
             <span className="text-sm text-[#202124]">{petFriendly ? "Yes" : "Any"}</span>
           </label>
         </div>

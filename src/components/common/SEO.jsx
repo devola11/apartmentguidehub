@@ -13,6 +13,7 @@
 //   jsonLd      - plain JS object to emit as application/ld+json structured data
 
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 const SITE_NAME = "ApartmentGuideHub";
 const SITE_URL = "https://apartmentguidehub.com";
@@ -30,8 +31,13 @@ export default function SEO({
   noindex = false,
   jsonLd,
 }) {
+  // Auto-derive the canonical path from the current route when no explicit
+  // `canonical` prop is given. Prevents pages from accidentally inheriting
+  // the homepage canonical and producing duplicate-URL warnings.
+  const { pathname } = useLocation();
+  const canonicalPath = canonical ?? pathname;
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Find Apartments for Rent in Texas & Oklahoma`;
-  const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   return (
     <Helmet>

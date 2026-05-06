@@ -251,8 +251,9 @@ export default function AuthForm({ mode = "login" }) {
       {/* Role - register only */}
       {isRegister && (
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">I am a…</label>
+          <label htmlFor="auth-role" className="block text-sm font-medium text-gray-700 mb-1">I am a…</label>
           <select
+            id="auth-role"
             value={role}
             onChange={(e) => setRole(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-base
