@@ -38,8 +38,9 @@ const Favorites     = lazy(() => import("./pages/Favorites"));
 const NotFound      = lazy(() => import("./pages/NotFound"));
 const AuthCallback  = lazy(() => import("./pages/AuthCallback"));
 
-// Leaflet CSS - must be imported globally so map tiles render correctly
-import "leaflet/dist/leaflet.css";
+// Leaflet CSS is imported inside ListingsMap.jsx so it travels with the
+// map chunk instead of loading on every page (auth, profile, favorites
+// etc.). This keeps unused CSS off the critical path.
 
 // Minimal loading fallback — matches the app background so there's no
 // colour flash while a page chunk downloads (typically < 100 ms on fast

@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import L from "leaflet";
 
+// Leaflet CSS is bundled with this module so it only loads on routes that
+// actually render the map (was previously imported globally in App.jsx).
+import "leaflet/dist/leaflet.css";
+
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";

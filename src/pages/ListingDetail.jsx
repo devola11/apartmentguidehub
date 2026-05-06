@@ -29,12 +29,13 @@
 //     Mobile:  Not sticky - flows naturally after the property info.
 //     lg+:     sticky top-20 (original behaviour).
 
-import { useState, useCallback, useEffect } from "react";
+import { lazy, Suspense, useState, useCallback, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useListing } from "../hooks/useListing";
 import { useListings } from "../hooks/useListings";
 import { usePropertyImages } from "../hooks/usePropertyImages";
-import ListingsMap from "../components/maps/ListingsMap";
+// Lazy: defers the Leaflet vendor chunk until the map section renders.
+const ListingsMap = lazy(() => import("../components/maps/ListingsMap"));
 import NeighborhoodInfo from "../components/listings/NeighborhoodInfo";
 import { PetPolicySection } from "../components/listings/PetBadges";
 import { RecentlyViewedSidebar } from "../components/listings/RecentlyViewed";
@@ -403,7 +404,11 @@ export default function ListingDetail() {
             {listing.latitude && listing.longitude && (
               <section className="mb-8">
                 <h2 className="text-lg font-bold text-[#202124] mb-3">Location</h2>
-                <ListingsMap listings={[listing]} className="h-[200px] sm:h-[260px] rounded-xl" />
+                <Suspense
+                  fallback={<div className="h-[200px] sm:h-[260px] rounded-xl bg-gray-100 animate-pulse" />}
+                >
+                  <ListingsMap listings={[listing]} className="h-[200px] sm:h-[260px] rounded-xl" />
+                </Suspense>
                 <p className="text-sm text-[#5F6368] mt-2 flex items-center gap-1.5 flex-wrap">
                   <PinIcon />
                   {listing.address}, {listing.city}, {listing.state} {listing.zip}

@@ -31,11 +31,14 @@
 //       → Mobile: hidden (shown/hidden by JS state instead)
 //       → md+:    always visible, takes up 50% of width
 
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { useListings } from "../hooks/useListings";
 import ListingRow from "../components/listings/ListingRow";
-import ListingsMap from "../components/maps/ListingsMap";
+// Lazy: keeps the ~45 KB (gzip) Leaflet vendor chunk off the initial
+// listings render. The map shows in a side panel on desktop and behind a
+// "Show Map" toggle on mobile — both common cases tolerate a brief load.
+const ListingsMap = lazy(() => import("../components/maps/ListingsMap"));
 import FilterBar from "../components/filters/FilterBar";
 import SEO from "../components/common/SEO";
 import SendMessageModal from "../components/common/SendMessageModal";
@@ -233,11 +236,13 @@ export default function Listings({ stateFilter }) {
           */}
           {showMobileMap && (
             <div className="md:hidden">
-              <ListingsMap
-                listings={listings}
-                hoveredId={hoveredId}
-                className="h-[260px] rounded-none"
-              />
+              <Suspense fallback={<div className="h-[260px] bg-gray-100 animate-pulse" />}>
+                <ListingsMap
+                  listings={listings}
+                  hoveredId={hoveredId}
+                  className="h-[260px] rounded-none"
+                />
+              </Suspense>
             </div>
           )}
 
@@ -440,11 +445,13 @@ export default function Listings({ stateFilter }) {
           shrink-0: prevents the map from shrinking as listing content grows.
         */}
         <div className="hidden md:block md:w-1/2 shrink-0">
-          <ListingsMap
-            listings={listings}
-            hoveredId={hoveredId}
-            className="h-full rounded-none"
-          />
+          <Suspense fallback={<div className="h-full bg-gray-100 animate-pulse" />}>
+            <ListingsMap
+              listings={listings}
+              hoveredId={hoveredId}
+              className="h-full rounded-none"
+            />
+          </Suspense>
         </div>
       </div>
 
