@@ -187,6 +187,12 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-gray-400 mb-4">
               Find verified apartment listings across Texas and Oklahoma. Real homes, real prices.
             </p>
+            <a
+              href="mailto:info@apartmentguidehub.com"
+              className="text-sm text-gray-400 hover:text-white transition-colors duration-150 inline-block mb-4"
+            >
+              info@apartmentguidehub.com
+            </a>
             {/* Social icons */}
             <div className="flex items-center gap-3">
               <a href="https://www.facebook.com/apartmentguide" target="_blank" rel="noopener noreferrer"
