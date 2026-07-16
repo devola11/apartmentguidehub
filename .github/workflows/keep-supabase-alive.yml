@@ -1,0 +1,17 @@
+name: Keep Supabase Alive
+on:
+  schedule:
+    - cron: '0 8 */3 * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping CA/FL Supabase
+        run: curl -s -o /dev/null -w "CA/FL %{http_code}\n" "https://xnabwbnpqoqkdjlpsriw.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhuYWJ3Ym5wcW9xa2RqbHBzcml3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMwMDI3OTUsImV4cCI6MjA1ODU3ODc5NX0.LMAxGv_VBop4YMfMxQEMwnAlgSCJk3kFOCcFqFON1Uw"
+      - name: Ping NY/NJ Supabase
+        run: curl -s -o /dev/null -w "NY/NJ %{http_code}\n" "https://ogrmnarahqoarrduoaua.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ncm1uYXJhaHFvYXJyZHVvYXVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyODYzOTAsImV4cCI6MjA5MTg2MjM5MH0.rQ1F8uKe77NcRXMp-mIuB20x5rk1kz5nm5mIGBbD1JY"
+      - name: Ping TX/OK Supabase
+        run: curl -s -o /dev/null -w "TX/OK %{http_code}\n" "https://ugoyvrojntodiliowmfd.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVnb3l2cm9qbnRvZGlsaW93bWZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5NTU4MzQsImV4cCI6MjA5MzUzMTgzNH0.GEQTpPMt5Q9dBxP_sdHiMiLNa_aNSs_5Vco2K8ePCcs"
+      - name: Ping Cointehera Supabase
+        run: curl -s -o /dev/null -w "Cointehera %{http_code}\n" "https://qmfttvrexzgctijrfvnk.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtZnR0dnJleHpnY3RpanJmdm5rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NTk1MjIsImV4cCI6MjA5MTMzNTUyMn0.8cWY09UMz2a_UPUJLXM8EPQXhiNzIJbYH1cJXwtPHf0"
